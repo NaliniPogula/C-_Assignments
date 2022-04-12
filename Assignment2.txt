@@ -1,0 +1,247 @@
+
+-------------------------------------------------------1-----------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace LitwareLib
+{
+	class Employee
+	{
+		private int EmpNo;
+		private string? EmpName;
+		private double Salary;
+		private double HRA;
+		private double TA;
+		private double DA;
+		private double PF;
+		private double TDS;
+		private double NetSalary;
+		private double GrossSalary;
+
+		static void Main()
+		{
+
+			Employee emp = new Employee();
+
+			//emp.CalculateSalary();
+			Console.WriteLine("EMPLOYEE NUMBER");
+			emp.setEmpNo(Convert.ToInt32(Console.ReadLine()));
+			Console.WriteLine("EMPLOYEE NAME");
+			emp.setEmpName(Convert.ToString(Console.ReadLine()));
+			Console.WriteLine("EMPLOYEE SALARY");
+			emp.setSalary(Convert.ToDouble(Console.ReadLine()));
+			Console.WriteLine("ENTER HRA");
+			emp.setHRA(Convert.ToDouble(Console.ReadLine()));
+			Console.WriteLine("ENTER TA");
+			emp.setTA(Convert.ToDouble(Console.ReadLine()));
+			Console.WriteLine("EMPLOYEE DA");
+			emp.setDA(Convert.ToDouble(Console.ReadLine()));
+			Console.WriteLine("EMPLOYEE PF");
+			emp.setPF(Convert.ToDouble(Console.ReadLine()));
+			Console.WriteLine("EMPLOYEE TDS");
+			emp.setTDS(Convert.ToDouble(Console.ReadLine()));
+			Console.WriteLine("EMPLOYEE NETSALARY");
+			emp.setNetSalary(Convert.ToDouble(Console.ReadLine()));
+			Console.WriteLine("EMPLOYEE GROSSSALARY");
+			emp.setGrossSalary(Convert.ToDouble(Console.ReadLine()));
+
+			Console.WriteLine("EMPLOYEE NAME IS = {0}", emp.getEmpName());
+			
+				double GrossSalary = emp.getSalary() + emp.getHRA() + emp.getTA() + emp.getDA();
+				double PF =0.1* emp.getGrossSalary();
+				double TDS = 0.18* emp.getGrossSalary() % 18;
+				double NetSalary = emp.getGrossSalary() - (emp.getPF() + emp.getTDS());
+				Console.WriteLine("Employee GrossSalary is = {0}", GrossSalary);
+				Console.WriteLine("Employee PF is = {0}", PF);
+				Console.WriteLine("Employee TDS is = {0}", TDS);
+				Console.WriteLine("Employee NetSalary is = {0}", NetSalary);
+			
+
+
+		}
+		public void setEmpNo(int NewEmpNo)
+		{
+			EmpNo = NewEmpNo;
+		}
+		public void setEmpName(string? NewEmpName)
+		{
+			EmpName = NewEmpName;
+		}
+		public void setSalary(double NewSalary)
+		{
+			Salary = NewSalary;
+		}
+
+		public void setHRA(double NewHRA)
+		{
+			HRA = NewHRA;
+		}
+		public void setTA(double NewTA)
+		{
+			TA = NewTA;
+		}
+		public void setDA(double NewDA)
+		{
+			DA = NewDA;
+		}
+		public void setPF(double NewPF)
+		{
+			PF = NewPF;
+		}
+		public void setTDS(double NewTDS)
+		{
+			TDS = NewTDS;
+		}
+		public void setNetSalary(double NewNetSalary)
+		{
+			NetSalary = NewNetSalary;
+		}
+		public void setGrossSalary(double NewGrossSalary)
+		{
+			GrossSalary = NewGrossSalary;
+		}
+
+
+
+		public int getEmpNo()
+		{
+			return EmpNo;
+		}
+		public string? getEmpName()
+		{
+			return EmpName;
+		}
+		public double getSalary()
+		{
+			return Salary;
+		}
+
+		public double getHRA()
+		{
+			return HRA;
+		}
+		public double getTA()
+		{
+			return TA;
+		}
+		public double getDA()
+		{
+			return DA;
+		}
+		public double getPF()
+		{
+			return PF;
+		}
+		public double getTDS()
+		{
+			return TDS;
+		}
+		public double getNetSalary()
+		{
+			return NetSalary;
+		}
+		public double getGrossSalary()
+		{
+			return GrossSalary;
+		}
+
+
+
+		
+
+	}
+}		
+	
+--------------------------------------------------------------------2---------------------------------------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace LitwareLib
+{
+	class Employee
+	{
+		int EmpNo;
+		string? EmpName;
+		double Salary;
+		double HRA;
+		double TA;
+		double DA;
+		double PF;
+		double TDS;
+		double NetSalary;
+		double GrossSalary;
+
+		void Accepting_details()
+		{
+			Console.WriteLine("Enter Employee Number");
+			int EmpNo = Convert.ToInt32(Console.ReadLine());
+
+			Console.WriteLine("Enter Employee Name");
+			string? EmpName = Convert.ToString(Console.ReadLine());
+
+			Console.WriteLine("Enter Employee Salary");
+			double Salary = Convert.ToDouble(Console.ReadLine());
+
+
+			Console.WriteLine("Enter Employee HRA");
+			double HRA = Convert.ToDouble(Console.ReadLine());
+
+
+			Console.WriteLine("Enter Employee TA");
+			double TA = Convert.ToDouble(Console.ReadLine());
+
+
+
+			Console.WriteLine("Enter Employee DA");
+			double DA = Convert.ToDouble(Console.ReadLine());
+
+
+            GrossSalary = Salary + HRA + TA + DA;
+			Console.WriteLine("New Employee GrossSalary is = {0}",GrossSalary);
+
+		}
+		
+
+		static void Main()
+		{
+
+			Employee emp = new Employee();
+			emp.Accepting_details();
+			
+
+		}
+	}
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    
+
