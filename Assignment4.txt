@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+namespace StackException
+{
+    public class CustomException
+    {
+        public static void Main(string[] args)
+        {
+            try
+            {
+                int MAX = 5, i;
+                int top;
+                int[] stack = new int[MAX];
+                Console.WriteLine("ENTER THE ELEMENTS YOU WANT TO PUSH");
+                for (i = 0; i < MAX; i++)
+                {
+                    stack[i] = Convert.ToInt32(Console.ReadLine());
+
+                }
+                top = stack.Length;
+                Push(top);
+                void Push(int top)
+                {
+                    if (top >= MAX)
+                    {
+                        throw new StackOverFlowException("Stack Over flow");
+                    }
+
+                }
+                Pop(top);
+                void Pop(int top)
+                {
+                    if (top < 0)
+                    {
+                        throw new StackUnderFlowException("Stack Under flow");
+                    }
+                    else
+                    {
+                        Console.WriteLine("ENTER THE POSITION OF ELEMENT YOU WANT TO DELETE");
+                        int n=Convert.ToInt32(Console.ReadLine());
+                        int value = stack[n];
+                        Console.WriteLine("Item popped from Stack : {0}",value);
+                    }
+
+                }
+            }
+            catch (StackOverFlowException ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+
+            }
+
+
+
+            catch (StackUnderFlowException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            
+
+
+
+        }
+    }
+    public class StackOverFlowException : Exception
+    {
+        public StackOverFlowException(string msg) : base(msg)
+        {
+
+        }
+    }
+    public class StackUnderFlowException : Exception
+    {
+        public StackUnderFlowException(string msg) : base(msg)
+        {
+
+        }
+    }
+    
+
+}
