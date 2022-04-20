@@ -1,0 +1,185 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sample
+{
+    internal class addemployee
+    {
+        static void Main()
+        {
+            List<string> list = new List<string>();
+            list.Add("aradhya");
+            list.Add("Nandu");
+            list.Add("Anil");
+            list.Add("Jhansi");
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine("List of employees" + ':' + list[i]);
+            }
+            Console.WriteLine("total number of employess" + ':' + list.Count);
+            Console.ReadLine();
+        }
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+using System;
+using System;
+namespace sample
+{
+    class array
+    {
+        static void Main(string[] args)
+        {
+            // Creating an array  
+            int[] arr = new int[6] { 9, 19, 29, 99, 199, 1 };
+            // Creating an empty array  
+            int[] arr2 = new int[6];
+            // Displaying length of array  
+            Console.WriteLine("length of first array: " + arr.Length);
+            // Sorting array  
+            Array.Sort(arr);
+            Console.Write("First array elements: ");
+            // Displaying sorted array  
+            PrintArray(arr);
+            // Finding index of an array element  
+            Console.WriteLine("\nIndex position of 25 is " + Array.IndexOf(arr, 25));
+            // Coping first array to empty array  
+            Array.Copy(arr, arr2, arr.Length);
+            Console.Write("Second array elements: ");
+            // Displaying second array  
+            PrintArray(arr2);
+            Array.Reverse(arr);
+            Console.Write("\nFirst Array elements in reverse order: ");
+            PrintArray(arr);
+        }
+        // User defined method for iterating array elements  
+        static void PrintArray(int[] arr)
+        {
+            foreach (Object elem in arr)
+            {
+                Console.Write(elem + " ");
+            }
+        }
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment5
+{
+    class Employee
+    {
+        public int EmpId { get; set; }
+        public string EmpName { get; set; }
+        public int EmpSal { get; set; }
+        public string EmpLoc { get; set; }
+
+
+    }
+
+    internal class ArrayListSample
+    {
+        static void Main(string[] args)
+        {
+            //object initilizer or collection initilizer
+            //ArrayList e = new ArrayList();//non generic
+
+            ArrayList e = new ArrayList()
+            {
+                    new Employee{EmpId=1,EmpName="NaliniPogula",EmpSal=90000,EmpLoc="Hyd"},
+                    new Employee{EmpId=2,EmpName="Nandu",EmpSal=45000,EmpLoc="Hyd"},
+                    new Employee{EmpId=3,EmpName="Naveen",EmpSal=100000,EmpLoc="Hyd"},
+                    new Employee{EmpId=3,EmpName="Srinivas",EmpSal=40000,EmpLoc="Hyd"},
+                    new Employee{ EmpId=4, EmpName="Vignesh"},
+            };
+            foreach (Employee i in e)
+            {
+                    Console.WriteLine(i.EmpId + " " + i.EmpName + " " + i.EmpSal + " " + i.EmpLoc);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+internal class Stacks
+    {
+        static void Main()
+        {
+            Stack stack1 = new Stack();
+            stack1.Push(1);
+            stack1.Push("Employee");
+            stack1.Push(67.2);
+            stack1.Push("Nalini Pogula");
+            foreach (Object obj in stack1)
+            {
+                Console.WriteLine("different types of data" + ":" + obj);
+            }
+            stack1.Pop();
+            foreach (Object obj in stack1)
+            {
+                Console.WriteLine("after pop operation" + ":" + obj);
+            }
+
+            Console.ReadLine();
+        }
+    }
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace 5th_Assignment
+{
+    internal class Search
+    {
+        static void Main()
+        {
+            List<string> list = new List<string>();
+            list.Add("srinivas");
+            list.Add("nalini");
+            list.Add("latha");
+            list.Add("Naveen");
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine("List of employees" + ':' + list[i]);
+            }
+            Console.WriteLine("total number of employess" + ':' + list.Count);
+            Console.WriteLine("enter person name:");
+            string X = Console.ReadLine();
+            if (list.Contains(X))
+            {
+                Console.WriteLine("yes " + X + " is an employee");
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+
+
+
+            Console.ReadLine();
+        }
+    }
+}
+
